@@ -30,14 +30,14 @@ export default function Academic() {
     },
     {
       title: 'Green IT',
-      institution: 'Faculdade Focus',
+      institution: 'EXIN',
       level: 'Certificação',
       period: '2021',
       description: 'Certificação focada em práticas sustentáveis de TI, redução de consumo energético, gestão de resíduos eletrônicos, virtualização e infraestrutura com menor impacto ambiental.',
     },
     {
-      title: 'ITIL',
-      institution: 'Faculdade Focus',
+      title: 'ITIL Foundation',
+      institution: 'EXIN',
       level: 'Certificação',
       period: '2021',
       description: 'Fundamentos da biblioteca ITIL para gestão de serviços de TI, abordando processos, melhoria contínua, ciclo de vida de serviços e alinhamento entre TI e negócios.',
