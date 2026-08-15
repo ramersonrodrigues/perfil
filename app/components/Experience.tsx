@@ -33,17 +33,6 @@ export default function Experience() {
       ],
     },
     {
-      company: 'Stefanini',
-      isActive: false,
-      roles: [
-        {
-          title: 'Técnico de Suporte Remoto',
-          period: '2017 - 2018',
-          description: 'Atendimento remoto a usuários corporativos, diagnóstico de incidentes de infraestrutura, resolução de chamados críticos e manutenção de estações de trabalho.',
-        },
-      ],
-    },
-    {
       company: 'Central IT',
       isActive: false,
       roles: [
@@ -64,6 +53,17 @@ export default function Experience() {
         },
       ],
     },
+    {
+      company: 'Stefanini',
+      isActive: false,
+      roles: [
+        {
+          title: 'Técnico de Suporte Remoto',
+          period: '2017 - 2018',
+          description: 'Atendimento remoto a usuários corporativos, diagnóstico de incidentes de infraestrutura, resolução de chamados críticos e manutenção de estações de trabalho.',
+        },
+      ],
+    },
   ];
 
   return (
@@ -79,11 +79,10 @@ export default function Experience() {
         {companies.map((company, index) => (
           <div key={index} className="relative pl-10 pb-12 last:pb-0">
             <div
-              className={`absolute left-0 -top-1 rounded-full border-4 border-bg-deep -translate-x-1/2 z-10 flex items-center justify-center ${
-                company.isActive
+              className={`absolute left-0 -top-1 rounded-full border-4 border-bg-deep -translate-x-1/2 z-10 flex items-center justify-center ${company.isActive
                   ? 'w-8 h-8 bg-bg-deep'
                   : 'w-4 h-4 bg-outline'
-              }`}
+                }`}
             >
               {company.isActive && (
                 <>
