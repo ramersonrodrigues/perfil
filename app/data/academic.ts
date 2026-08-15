@@ -1,0 +1,58 @@
+export const academicItems = [
+  {
+    title: 'Banco de Dados',
+    institution: 'Faculdade Focus',
+    level: 'Pós-graduação',
+    period: '2022 - 2023',
+    description: 'Aprofundamento em modelagem de dados, administração de SGBDs, otimização de consultas, replicação, backup, segurança da informação e arquitetura de dados para grandes volumes.',
+  },
+  {
+    title: 'Engenharia de Software',
+    institution: 'Faculdade Focus',
+    level: 'Pós-graduação',
+    period: '2020 - 2021',
+    description: 'Estudo avançado em processos de desenvolvimento, padrões de projeto, arquitetura de software, qualidade, testes, integração contínua e gestão de produtos digitais.',
+  },
+  {
+    title: 'Análise e Desenvolvimento de Sistemas',
+    institution: 'FACIPLAC',
+    level: 'Superior',
+    period: '2014 - 2018',
+    description: 'Formação prática voltada para o ciclo completo de desenvolvimento de software, abrangendo análise de requisitos, programação, banco de dados, redes e metodologias ágeis.',
+  },
+  {
+    title: 'Desenvolvimento de Software',
+    institution: 'Instituto Federal do Piauí',
+    level: 'Técnico',
+    period: '2011 - 2013',
+    description: 'Primeiro contato com a área de tecnologia, desenvolvendo lógica de programação, redes, banco de dados e aplicações usando linguagens como Java e PHP.',
+  },
+  {
+    title: 'Green IT',
+    institution: 'EXIN',
+    level: 'Certificação',
+    period: '2021',
+    description: 'Certificação focada em práticas sustentáveis de TI, redução de consumo energético, gestão de resíduos eletrônicos, virtualização e infraestrutura com menor impacto ambiental.',
+  },
+  {
+    title: 'ITIL Foundation',
+    institution: 'EXIN',
+    level: 'Certificação',
+    period: '2021',
+    description: 'Fundamentos da biblioteca ITIL para gestão de serviços de TI, abordando processos, melhoria contínua, ciclo de vida de serviços e alinhamento entre TI e negócios.',
+  },
+  {
+    title: 'Montagem e Manutenção de Computadores',
+    institution: 'SENAI',
+    level: 'Curso',
+    period: '2010',
+    description: 'Curso prático voltado ao diagnóstico de hardware, montagem de estações de trabalho, instalação de componentes, configuração de BIOS e resolução de problemas físicos de computadores.',
+  },
+  {
+    title: 'Sistema Operacional Linux',
+    institution: 'SENAI',
+    level: 'Curso',
+    period: '2010',
+    description: 'Introdução ao ambiente Linux, linha de comando, gerenciamento de usuários, permissões, instalação de pacotes, serviços de rede e configuração básica de servidores.',
+  },
+];

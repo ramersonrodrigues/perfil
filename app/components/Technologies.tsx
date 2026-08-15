@@ -1,15 +1,10 @@
-const technologies = [
-  { name: 'React', icon: 'code' },
-  { name: 'TypeScript', icon: 'keyboard' },
-  { name: 'Node.js', icon: 'terminal' },
-  { name: 'Next.js', icon: 'rocket_launch' },
-  { name: 'Tailwind CSS', icon: 'format_paint' },
-  { name: 'PostgreSQL', icon: 'database' },
-  { name: 'Docker', icon: 'view_in_ar' },
-  { name: 'AWS', icon: 'cloud' },
-];
+'use client';
+
+import { useTechnologies } from '../hooks/useTechnologies';
 
 export default function Technologies() {
+  const { technologies } = useTechnologies();
+
   return (
     <section id="tecnologias" className="py-20 scroll-mt-24">
       <h2 className="text-3xl font-bold text-text-primary mb-8 flex items-center gap-4">

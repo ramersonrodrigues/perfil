@@ -1,60 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
-const navItems = [
-  { label: 'Início', href: '#home' },
-  { label: 'Acadêmico', href: '#academico' },
-  { label: 'Experiência', href: '#experiencia' },
-  { label: 'Tecnologias', href: '#tecnologias' },
-  { label: 'Projetos', href: '#projetos' },
-  { label: 'Recomendações', href: '#avaliacoes' },
-];
-
-const HEADER_HEIGHT = 64;
+import { useHeader } from '../hooks/useHeader';
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState('home');
-  const [previousSection, setPreviousSection] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + HEADER_HEIGHT + 80;
-
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const id = navItems[i].href.replace('#', '');
-        const section = document.getElementById(id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection((prev) => {
-            if (prev !== id) {
-              setPreviousSection(prev);
-            }
-            return id;
-          });
-          break;
-        }
-      }
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    if (href === '#home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const target = document.querySelector(href);
-      if (target) {
-        const top = (target as HTMLElement).offsetTop - HEADER_HEIGHT - 20;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const { navItems, activeSection, isMobileMenuOpen, handleClick, toggleMobileMenu } = useHeader();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-sm border-b border-border-subtle">
@@ -103,7 +52,7 @@ export default function Header() {
         <button
           aria-label="Menu"
           className="md:hidden text-primary"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={toggleMobileMenu}
         >
           <span className="material-symbols-outlined">
             {isMobileMenuOpen ? 'close' : 'menu'}
