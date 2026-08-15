@@ -57,10 +57,10 @@ export default function Stats() {
   }, []);
 
   const stats = [
-    { number: 8, suffix: '+', label: 'Anos de Experiência' },
-    { number: 50, suffix: '+', label: 'Projetos Concluídos' },
-    { number: 30, suffix: '+', label: 'Clientes Satisfeitos' },
-    { number: 10, suffix: '+', label: 'Open Source' },
+    { number: 10, suffix: '+', label: 'Anos de Experiência' },
+    { number: 20, suffix: '+', label: 'Projetos Desenvolvidos' },
+    { number: 7, suffix: '+', label: 'Anos como Programador' },
+    { number: 2, suffix: '+', label: 'Anos como Professor' },
   ];
 
   return (

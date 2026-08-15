@@ -62,7 +62,7 @@ export default function Header() {
         <a
           href="#home"
           onClick={(e) => handleClick(e, '#home')}
-          className="text-2xl md:text-3xl font-bold text-primary tracking-tighter"
+          className="text-lg md:text-xl font-bold text-primary tracking-tight"
         >
           Râmerson Rodrigues
         </a>
@@ -92,9 +92,9 @@ export default function Header() {
 
         <div className="hidden md:flex items-center">
           <a
-            href="#home"
-            onClick={(e) => handleClick(e, '#home')}
-            className="bg-primary-container text-text-primary font-bold px-6 py-2 rounded hover:bg-inverse-primary transition-colors"
+            href="/curriculo.pdf"
+            download
+            className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold rounded-full bg-primary-container text-text-primary hover:bg-inverse-primary transition-colors"
           >
             Currículo
           </a>
