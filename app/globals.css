@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(208, 188, 255, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(208, 188, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(208, 188, 255, 0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Swiper pagination bullets theming */
+.modal-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.modal-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #49454f;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.modal-swiper .swiper-pagination-bullet-active {
+  background: #d0bcff;
+  width: 24px;
+}
+
+.modal-swiper .swiper-pagination-bullet:hover {
+  background: #d0bcff;
+  opacity: 0.7;
+}
