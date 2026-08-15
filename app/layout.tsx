@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.className} bg-bg-deep text-text-secondary`}>
+      <body suppressHydrationWarning className={`${inter.className} bg-bg-deep text-text-secondary`}>
         {children}
       </body>
     </html>

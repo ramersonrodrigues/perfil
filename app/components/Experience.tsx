@@ -25,8 +25,8 @@ export default function Experience() {
             >
               {company.isActive && (
                 <>
-                  <span className="absolute w-7 h-7 rounded-full border border-primary/60" />
-                  <span className="w-3 h-3 rounded-full bg-primary" />
+                  <span className="absolute w-6 h-6 rounded-full bg-primary/30 animate-ping" />
+                  <span className="w-3 h-3 rounded-full bg-primary relative" />
                 </>
               )}
             </div>

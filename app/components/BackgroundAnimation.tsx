@@ -61,18 +61,18 @@ void main() {
 
     float t = u_time * 0.2;
     
-    float n = snoise(p * 0.8 + t);
-    n += 0.5 * snoise(p * 1.5 - t * 0.5);
-    n += 0.25 * snoise(p * 3.0 + t);
+    float n = snoise(p * 0.5 + t);
+    n += 0.5 * snoise(p * 1.0 - t * 0.5);
+    n += 0.25 * snoise(p * 2.0 + t);
 
-    vec3 color_bg = vec3(0.05, 0.04, 0.08);
+    vec3 color_bg = vec3(0.07, 0.05, 0.10);
     vec3 color_primary = vec3(0.51, 0.34, 0.9);
     vec3 color_accent = vec3(0.23, 0.51, 0.96);
 
     vec3 color = mix(color_bg, color_primary, smoothstep(-1.0, 1.0, n));
-    color = mix(color, color_accent, smoothstep(0.5, 1.5, n) * 0.3);
+    color = mix(color, color_accent, smoothstep(0.3, 1.0, n) * 0.4);
 
-    float vignette = 1.0 - smoothstep(0.5, 2.0, length(p));
+    float vignette = 1.0 - smoothstep(1.2, 3.0, length(p));
     color *= vignette;
 
     gl_FragColor = vec4(color, 1.0);
@@ -110,13 +110,15 @@ void main() {
 
     function resize() {
       if (!canvas) return;
-      const displayWidth = canvas.clientWidth;
-      const displayHeight = canvas.clientHeight;
+      const displayWidth = window.innerWidth;
+      const displayHeight = window.innerHeight;
       if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
         canvas.width = displayWidth;
         canvas.height = displayHeight;
       }
     }
+
+    let animationFrameId: number;
 
     function render(time: number) {
       if (!canvas) return;
@@ -125,20 +127,24 @@ void main() {
       gl.uniform1f(timeLocation, time * 0.001);
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      requestAnimationFrame(render);
+      animationFrameId = requestAnimationFrame(render);
     }
 
-    requestAnimationFrame(render);
+    window.addEventListener('resize', resize);
+    resize();
+
+    animationFrameId = requestAnimationFrame(render);
 
     return () => {
-      // Cleanup
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
     <div className="fixed left-0 right-0 top-0 bottom-0 w-full h-full -z-20">
       <canvas ref={canvasRef} className="w-full h-full block" />
-      <div className="absolute inset-0 bg-gradient-to-b from-bg-deep/50 via-bg-deep/80 to-bg-deep pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg-deep/30 via-bg-deep/60 to-bg-deep/90 pointer-events-none" />
     </div>
   );
 }
