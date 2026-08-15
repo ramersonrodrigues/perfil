@@ -13,20 +13,21 @@ export default function Experience() {
       </h2>
 
       <div className="relative ml-6 md:ml-8">
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border-subtle" />
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-primary/30" />
 
         {companies.map((company, index) => (
           <div key={index} className="relative pl-10 pb-12 last:pb-0">
             <div
-              className={`absolute left-0 -top-1 rounded-full border-4 border-bg-deep -translate-x-1/2 z-10 flex items-center justify-center ${company.isActive
-                  ? 'w-8 h-8 bg-bg-deep'
-                  : 'w-4 h-4 bg-outline'
-                }`}
+              className={`absolute left-0 -translate-x-1/2 rounded-full z-10 flex items-center justify-center ${
+                company.isActive
+                  ? '-top-3 w-10 h-10 bg-primary/20'
+                  : 'top-0 w-5 h-5 bg-surface-elevated border-2 border-primary/50'
+              }`}
             >
               {company.isActive && (
                 <>
-                  <span className="absolute w-6 h-6 rounded-full bg-primary/30 animate-ping" />
-                  <span className="w-3 h-3 rounded-full bg-primary relative" />
+                  <span className="absolute w-8 h-8 rounded-full bg-primary/30 animate-ping" />
+                  <span className="w-4 h-4 rounded-full bg-primary relative" />
                 </>
               )}
             </div>

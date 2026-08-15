@@ -13,12 +13,12 @@ export default function Academic() {
       </h2>
 
       <div className="relative ml-6 md:ml-8">
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border-subtle" />
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-primary/30" />
 
         {academicItems.map((item, index) => (
           <div key={index} className="relative pl-10 pb-10 last:pb-0">
             <div
-              className="absolute left-0 -top-1 w-4 h-4 rounded-full border-4 border-bg-deep -translate-x-1/2 z-10 bg-outline"
+              className="absolute left-0 -translate-x-1/2 top-0 w-5 h-5 rounded-full z-10 bg-surface-elevated border-2 border-primary/50"
             />
 
             <div className="bg-surface-container p-5 rounded-lg border border-border-subtle hover:border-primary-container transition-all duration-300 group">
